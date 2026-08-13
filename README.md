@@ -16,7 +16,7 @@ Rendered live at coconutlabs.org/projects/agentic-mlops.
 ## Run it yourself
 
     node scripts/fetch-deps.mjs
-    node --test test/
+    node --test
     node scripts/loop.mjs --dry
     node scripts/loop.mjs --date 2026-08-13
 
@@ -51,7 +51,9 @@ every other day produces a benign paraphrase candidate. This is
 deterministic and disclosed here, not hidden in the numbers. The record
 shows the gate and canary catching the degraded nights and rolling back.
 
-`est_cost_usd` in each gate is an estimate: tokens per task times case
-count times $0.15 per million tokens, a reference small-model API price
-used for scale, not a real bill. `actual_cost_usd` is always 0 because
-inference runs on GitHub Actions' free CPU minutes for a public repo.
+`est_cost_usd` in each gate is an estimate: generated tokens per task
+(output only, no prompt tokens counted) times case count times $0.15 per
+million tokens, a reference small-model API price used for scale, not a
+real bill and not a full API-comparable cost. `actual_cost_usd` is always
+0 because inference runs on GitHub Actions' free CPU minutes for a public
+repo.

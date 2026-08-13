@@ -28,4 +28,5 @@ jobs:
           git config user.email "patelshrey77@gmail.com"
           git add runs/ registry/
           git commit -m "loop: $(date -u +%F) $(node -e 'const s=require("fs").readdirSync("runs").sort().pop();console.log(JSON.parse(require("fs").readFileSync(`runs/${s}/summary.json`)).action)')" || echo "nothing to commit"
+          git pull --rebase origin main
           git push
