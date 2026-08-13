@@ -1,0 +1,101 @@
+[
+  { "id": "ex-01", "kind": "extract",
+    "input": "Invoice 4471 from Meridian Supply, due 2026-09-01, total $1,284.50",
+    "instruction": "Extract as JSON with keys invoice_no (string), vendor (string), due (YYYY-MM-DD), total_usd (number).",
+    "expect": { "invoice_no": "4471", "vendor": "Meridian Supply", "due": "2026-09-01", "total_usd": 1284.5 } },
+
+  { "id": "ex-02", "kind": "extract",
+    "input": "Invoice 9902 from Blue Harbor Logistics, due 2026-10-15, total $342.00",
+    "instruction": "Extract as JSON with keys invoice_no (string), vendor (string), due (YYYY-MM-DD), total_usd (number).",
+    "expect": { "invoice_no": "9902", "vendor": "Blue Harbor Logistics", "due": "2026-10-15", "total_usd": 342 } },
+
+  { "id": "ex-03", "kind": "extract",
+    "input": "Meeting on 2026-08-10 with Priya Nair and Tom Reyes. Decided to launch the beta on 2026-09-01. Action item: Tom to send the API docs.",
+    "instruction": "Extract as JSON with keys date (YYYY-MM-DD), attendees (array of strings), decision (string).",
+    "expect": { "date": "2026-08-10", "attendees": ["Priya Nair", "Tom Reyes"], "decision": "launch the beta on 2026-09-01" } },
+
+  { "id": "ex-04", "kind": "extract",
+    "input": "Standup on 2026-08-11 with Alex Kim and Dana Cho. Decided to postpone the migration to 2026-08-20.",
+    "instruction": "Extract as JSON with keys date (YYYY-MM-DD), attendees (array of strings), decision (string).",
+    "expect": { "date": "2026-08-11", "attendees": ["Alex Kim", "Dana Cho"], "decision": "postpone the migration to 2026-08-20" } },
+
+  { "id": "ex-05", "kind": "extract",
+    "input": "Shipment SHP-7731 to 44 Birch Lane, Austin TX, carrier FedEx, expected 2026-08-18.",
+    "instruction": "Extract as JSON with keys shipment_id (string), destination (string), carrier (string), eta (YYYY-MM-DD).",
+    "expect": { "shipment_id": "SHP-7731", "destination": "44 Birch Lane, Austin TX", "carrier": "FedEx", "eta": "2026-08-18" } },
+
+  { "id": "ex-06", "kind": "extract",
+    "input": "Shipment SHP-8842 to 12 Oak Street, Denver CO, carrier UPS, expected 2026-08-22.",
+    "instruction": "Extract as JSON with keys shipment_id (string), destination (string), carrier (string), eta (YYYY-MM-DD).",
+    "expect": { "shipment_id": "SHP-8842", "destination": "12 Oak Street, Denver CO", "carrier": "UPS", "eta": "2026-08-22" } },
+
+  { "id": "ex-07", "kind": "extract",
+    "input": "2026-08-09T14:02:11Z ERROR service=billing code=E502 message=\"connection refused\"",
+    "instruction": "Extract as JSON with keys timestamp (ISO string), service (string), code (string), message (string).",
+    "expect": { "timestamp": "2026-08-09T14:02:11Z", "service": "billing", "code": "E502", "message": "connection refused" } },
+
+  { "id": "ex-08", "kind": "extract",
+    "input": "2026-08-09T09:15:44Z ERROR service=auth code=E401 message=\"token expired\"",
+    "instruction": "Extract as JSON with keys timestamp (ISO string), service (string), code (string), message (string).",
+    "expect": { "timestamp": "2026-08-09T09:15:44Z", "service": "auth", "code": "E401", "message": "token expired" } },
+
+  { "id": "tc-01", "kind": "toolcall",
+    "input": "What is the weather in Pune right now?",
+    "instruction": "Respond ONLY with a JSON tool call: {\"tool\": ..., \"args\": {...}}. Available: get_weather(city).",
+    "expect": { "tool": "get_weather", "args": { "city": "Pune" } } },
+
+  { "id": "tc-02", "kind": "toolcall",
+    "input": "Tell me the current weather in Lisbon.",
+    "instruction": "Respond ONLY with a JSON tool call: {\"tool\": ..., \"args\": {...}}. Available: get_weather(city).",
+    "expect": { "tool": "get_weather", "args": { "city": "Lisbon" } } },
+
+  { "id": "tc-03", "kind": "toolcall",
+    "input": "Find flights from Boston to Chicago on 2026-09-05.",
+    "instruction": "Respond ONLY with a JSON tool call: {\"tool\": ..., \"args\": {...}}. Available: search_flights(from, to, date).",
+    "expect": { "tool": "search_flights", "args": { "from": "Boston", "to": "Chicago", "date": "2026-09-05" } } },
+
+  { "id": "tc-04", "kind": "toolcall",
+    "input": "Find flights from Miami to Seattle on 2026-10-02.",
+    "instruction": "Respond ONLY with a JSON tool call: {\"tool\": ..., \"args\": {...}}. Available: search_flights(from, to, date).",
+    "expect": { "tool": "search_flights", "args": { "from": "Miami", "to": "Seattle", "date": "2026-10-02" } } },
+
+  { "id": "tc-05", "kind": "toolcall",
+    "input": "Open a high priority ticket titled Database connection timeout.",
+    "instruction": "Respond ONLY with a JSON tool call: {\"tool\": ..., \"args\": {...}}. Available: create_ticket(title, priority).",
+    "expect": { "tool": "create_ticket", "args": { "title": "Database connection timeout", "priority": "high" } } },
+
+  { "id": "tc-06", "kind": "toolcall",
+    "input": "Open a low priority ticket titled Update onboarding docs.",
+    "instruction": "Respond ONLY with a JSON tool call: {\"tool\": ..., \"args\": {...}}. Available: create_ticket(title, priority).",
+    "expect": { "tool": "create_ticket", "args": { "title": "Update onboarding docs", "priority": "low" } } },
+
+  { "id": "tc-07", "kind": "toolcall",
+    "input": "Convert 250 USD to EUR.",
+    "instruction": "Respond ONLY with a JSON tool call: {\"tool\": ..., \"args\": {...}}. Available: convert(amount, from, to).",
+    "expect": { "tool": "convert", "args": { "amount": 250, "from": "USD", "to": "EUR" } } },
+
+  { "id": "tc-08", "kind": "toolcall",
+    "input": "Convert 12 kg to lb.",
+    "instruction": "Respond ONLY with a JSON tool call: {\"tool\": ..., \"args\": {...}}. Available: convert(amount, from, to).",
+    "expect": { "tool": "convert", "args": { "amount": 12, "from": "kg", "to": "lb" } } },
+
+  { "id": "ar-01", "kind": "arith",
+    "input": "A store sells notebooks for $3 each. How much do 7 notebooks cost?",
+    "instruction": "Respond ONLY with JSON: {\"tool\":\"calculator\",\"args\":{\"expression\":\"...\"},\"answer\":<number>}.",
+    "expect": { "tool": "calculator", "args": { "expression": "3*7" }, "answer": 21 } },
+
+  { "id": "ar-02", "kind": "arith",
+    "input": "A tank holds 120 liters and is filled at 8 liters per minute. How many minutes to fill it?",
+    "instruction": "Respond ONLY with JSON: {\"tool\":\"calculator\",\"args\":{\"expression\":\"...\"},\"answer\":<number>}.",
+    "expect": { "tool": "calculator", "args": { "expression": "120/8" }, "answer": 15 } },
+
+  { "id": "ar-03", "kind": "arith",
+    "input": "A train travels 60 miles in 1.5 hours. What is its speed in miles per hour?",
+    "instruction": "Respond ONLY with JSON: {\"tool\":\"calculator\",\"args\":{\"expression\":\"...\"},\"answer\":<number>}.",
+    "expect": { "tool": "calculator", "args": { "expression": "60/1.5" }, "answer": 40 } },
+
+  { "id": "ar-04", "kind": "arith",
+    "input": "A recipe needs 250 grams of flour per batch. How many grams for 5 batches?",
+    "instruction": "Respond ONLY with JSON: {\"tool\":\"calculator\",\"args\":{\"expression\":\"...\"},\"answer\":<number>}.",
+    "expect": { "tool": "calculator", "args": { "expression": "250*5" }, "answer": 1250 } }
+]
