@@ -1,0 +1,21 @@
+name: probe
+on: workflow_dispatch
+jobs:
+  dry-loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/cache@v4
+        with:
+          path: |
+            models
+            bin
+          key: deps-${{ hashFiles('policy.json') }}
+      - run: node --test test/
+      - run: node scripts/loop.mjs --dry
+      - run: cat runs/*/summary.json
+      - uses: actions/upload-artifact@v4
+        with: { name: probe-runs, path: runs/ }
