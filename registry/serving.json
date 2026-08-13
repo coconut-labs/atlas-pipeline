@@ -1,0 +1,11 @@
+{
+  "version": "8a7af0c7b319",
+  "since": "2026-08-13T04:37:54.193Z",
+  "history": [
+    {
+      "version": "0867e8775c40",
+      "from": "2026-08-13",
+      "action": "rollback"
+    }
+  ]
+}
