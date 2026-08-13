@@ -57,3 +57,4 @@ million tokens, a reference small-model API price used for scale, not a
 real bill and not a full API-comparable cost. `actual_cost_usd` is always
 0 because inference runs on GitHub Actions' free CPU minutes for a public
 repo.
+
