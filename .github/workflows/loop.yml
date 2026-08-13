@@ -1,0 +1,31 @@
+name: nightly-loop
+on:
+  schedule:
+    - cron: "40 3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: loop, cancel-in-progress: false }
+jobs:
+  loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/cache@v4
+        with:
+          path: |
+            models
+            bin
+          key: deps-${{ hashFiles('policy.json') }}
+      - run: node --test
+      - run: node scripts/loop.mjs
+      - name: Commit the night's record
+        run: |
+          git config user.name "Shrey Patel"
+          git config user.email "patelshrey77@gmail.com"
+          git add runs/ registry/
+          git commit -m "loop: $(date -u +%F) $(node -e 'const s=require("fs").readdirSync("runs").sort().pop();console.log(JSON.parse(require("fs").readFileSync(`runs/${s}/summary.json`)).action)')" || echo "nothing to commit"
+          git push
