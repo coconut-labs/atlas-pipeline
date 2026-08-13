@@ -21,3 +21,12 @@ test("gate with missing field and wrong enum fails with named errors", () => {
 test("unknown kind throws", () => {
   assert.throws(() => validate("nope", {}));
 });
+
+test("valid summary object passes", () => {
+  const summary = {
+    date: "2026-08-13", action: "promote", gate_verdict: "pass",
+    canary_verdict: "pass", candidate: "abc123", serving_after: "abc123",
+    dry: false,
+  };
+  assert.deepEqual(validate("summary", summary), []);
+});
