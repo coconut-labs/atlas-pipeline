@@ -1,0 +1,15 @@
+{
+  "llamacpp_tag": "b4589",
+  "model": {
+    "name": "qwen2.5-0.5b-instruct-q4_k_m",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "license": "Apache-2.0"
+  },
+  "thresholds": {
+    "min_pass_rate": 0.7,
+    "max_p95_ms": 30000,
+    "max_tokens_per_task": 400
+  },
+  "reference_price_per_mtok": 0.15,
+  "canary_case_ids": ["ex-01", "ex-05", "tc-01", "tc-05", "ar-01", "ar-03"]
+}
