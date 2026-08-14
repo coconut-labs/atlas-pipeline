@@ -1,0 +1,25 @@
+{
+  "date": "2026-08-14",
+  "version": "b024ae0f4ce5",
+  "case_id": "ex-01",
+  "prompt": "You are a precise data assistant. Respond with ONLY the JSON asked for,\nno prose, no ",
+  "raw_output": " liberties taken, only the precise JSON:\n{\n  \"question\": {\n    \"id\": 1,\n    \"question\": \"What is the capital of the United States?\"\n  }\n} [end of text]\n\n\n",
+  "parsed": {
+    "question": {
+      "id": 1,
+      "question": "What is the capital of the United States?"
+    }
+  },
+  "grader": {
+    "kind": "extract",
+    "pass": false,
+    "expected": {
+      "invoice_no": "4471",
+      "vendor": "Meridian Supply",
+      "due": "2026-09-01",
+      "total_usd": 1284.5
+    }
+  },
+  "timing_ms": 1307,
+  "tokens": 38
+}
