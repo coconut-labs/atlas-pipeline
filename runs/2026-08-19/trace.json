@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-19",
+  "version": "18d11cde8a4e",
+  "case_id": "ex-03",
+  "prompt": "You are a precise data assistant. Respond with ONLY the JSON asked for,\nno prose, no code fences.\nTASK: Extract as JSON with keys date (YYYY-MM-DD), attendees (array of strings), decision (string).\nINPUT: Meeting on 2026-08-10 with Priya Nair and Tom Reyes. Decided to launch the beta on 2026-09-01. Action item: Tom to send the API docs.\nJSON:",
+  "raw_output": " {\n    \"date\": \"2026-08-10\",\n    \"attendees\": [\n        \"Priya Nair\"\n    ],\n    \"decision\": \"beta launch on 2026-09-01\"\n} [end of text]\n\n\n",
+  "parsed": {
+    "date": "2026-08-10",
+    "attendees": [
+      "Priya Nair"
+    ],
+    "decision": "beta launch on 2026-09-01"
+  },
+  "grader": {
+    "kind": "extract",
+    "pass": false,
+    "expected": {
+      "date": "2026-08-10",
+      "attendees": [
+        "Priya Nair",
+        "Tom Reyes"
+      ],
+      "decision": "launch the beta on 2026-09-01"
+    }
+  },
+  "timing_ms": 2167,
+  "tokens": 53
+}

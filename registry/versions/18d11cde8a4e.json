@@ -1,0 +1,9 @@
+{
+  "model": "qwen2.5-0.5b-instruct-q4_k_m",
+  "prompt_template": "You are a precise data assistant. Respond with ONLY the JSON asked for,\nno prose, no code fences.\nTASK: {{instruction}}\nINPUT: {{input}}\nJSON:",
+  "temp": 1.4,
+  "max_tokens": 256,
+  "variant": "drift-hot",
+  "hash": "18d11cde8a4e",
+  "created": "2026-08-19T04:20:17.836Z"
+}
