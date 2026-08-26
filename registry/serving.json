@@ -1,6 +1,6 @@
 {
-  "version": "8a7af0c7b319",
-  "since": "2026-08-13T04:37:54.193Z",
+  "version": "18d11cde8a4e",
+  "since": "2026-08-26T04:23:32.909Z",
   "history": [
     {
       "version": "0867e8775c40",
@@ -71,6 +71,11 @@
       "version": "0867e8775c40",
       "from": "2026-08-25",
       "action": "rollback"
+    },
+    {
+      "version": "18d11cde8a4e",
+      "from": "2026-08-26",
+      "action": "promote"
     }
   ]
 }
