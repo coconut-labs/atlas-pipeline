@@ -76,6 +76,11 @@
       "version": "18d11cde8a4e",
       "from": "2026-08-26",
       "action": "promote"
+    },
+    {
+      "version": "0867e8775c40",
+      "from": "2026-08-27",
+      "action": "rollback"
     }
   ]
 }
