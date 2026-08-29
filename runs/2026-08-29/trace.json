@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-29",
+  "version": "b024ae0f4ce5",
+  "case_id": "ex-01",
+  "prompt": "You are a precise data assistant. Respond with ONLY the JSON asked for,\nno prose, no ",
+  "raw_output": " unrelated  comments  outside  the  specified  within,  only the final result - \n\n{\n  \"result\": \"The answer is 20\"\n}\n{\n  \"result\": \"The answer is 20\",\n  \"result\": \"The answer is 20\"\n} [end of text]\n\n\n",
+  "parsed": {
+    "result": "The answer is 20"
+  },
+  "grader": {
+    "kind": "extract",
+    "pass": false,
+    "expected": {
+      "invoice_no": "4471",
+      "vendor": "Meridian Supply",
+      "due": "2026-09-01",
+      "total_usd": 1284.5
+    }
+  },
+  "timing_ms": 1850,
+  "tokens": 59
+}

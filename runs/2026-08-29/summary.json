@@ -1,0 +1,9 @@
+{
+  "date": "2026-08-29",
+  "action": "rollback",
+  "gate_verdict": "fail",
+  "canary_verdict": "fail",
+  "candidate": "b024ae0f4ce5",
+  "serving_after": "18d11cde8a4e",
+  "dry": false
+}
