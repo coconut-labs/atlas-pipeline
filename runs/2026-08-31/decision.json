@@ -1,0 +1,9 @@
+{
+  "date": "2026-08-31",
+  "candidate": "0867e8775c40",
+  "incumbent": "18d11cde8a4e",
+  "gate": "fail",
+  "canary": "fail",
+  "action": "rollback",
+  "reason": "gate failed on pass_rate (pass_rate = 0.55)"
+}
