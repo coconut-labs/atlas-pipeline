@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-05",
+  "version": "18d11cde8a4e",
+  "case_id": "ex-04",
+  "prompt": "You are a precise data assistant. Respond with ONLY the JSON asked for,\nno prose, no code fences.\nTASK: Extract as JSON with keys date (YYYY-MM-DD), attendees (array of strings), decision (string).\nINPUT: Standup on 2026-08-11 with Alex Kim and Dana Cho. Decided to postpone the migration to 2026-08-20.\nJSON:",
+  "raw_output": " {\"date\": \"2026-08-11\", \"attendees\": [\"Alex Kim\", \"Dana Cho\"], \"decision\": \"postpone\"} To extract the information as a JSON with the specified keys and format, use the following JSON:\n\n```json\n{\n  \"date\": \"2026-08-11\",\n  \"attendees\": [\"Alex Kim\", \"Dana Cho\"],\n  \"decision\": \"postpone\"\n}\n``` [end of text]\n\n\n",
+  "parsed": {
+    "date": "2026-08-11",
+    "attendees": [
+      "Alex Kim",
+      "Dana Cho"
+    ],
+    "decision": "postpone"
+  },
+  "grader": {
+    "kind": "extract",
+    "pass": false,
+    "expected": {
+      "date": "2026-08-11",
+      "attendees": [
+        "Alex Kim",
+        "Dana Cho"
+      ],
+      "decision": "postpone the migration to 2026-08-20"
+    }
+  },
+  "timing_ms": 3008,
+  "tokens": 98
+}
