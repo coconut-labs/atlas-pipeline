@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-20",
+  "version": "b024ae0f4ce5",
+  "cases": 20,
+  "passed": 0,
+  "pass_rate": 0,
+  "p50_ms": 1612.5,
+  "p95_ms": 5676.9,
+  "tokens_per_task": 98.4,
+  "est_cost_usd": 0.00029519999999999997,
+  "actual_cost_usd": 0,
+  "verdict": "fail",
+  "failing_axis": "pass_rate"
+}
