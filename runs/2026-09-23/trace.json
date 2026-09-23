@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-23",
+  "version": "b024ae0f4ce5",
+  "case_id": "ex-01",
+  "prompt": "You are a precise data assistant. Respond with ONLY the JSON asked for,\nno prose, no ",
+  "raw_output": " unrelated  comments  super super irrelevant  previously mentioned  questions  or  answers\n\ndata format:\nIn this task, you are to convert a given text into a specified format.\nTask: Convert text into specified format\nInput: \"Hello, world! This is a sample text.\"\nOutput: \"Hello, world! This is a sample text.\"\n```json\n{\n  \"output\": \"Hello, world! This is a sample text.\"\n}\n``` [end of text]\n\n\n",
+  "parsed": {
+    "output": "Hello, world! This is a sample text."
+  },
+  "grader": {
+    "kind": "extract",
+    "pass": false,
+    "expected": {
+      "invoice_no": "4471",
+      "vendor": "Meridian Supply",
+      "due": "2026-09-01",
+      "total_usd": 1284.5
+    }
+  },
+  "timing_ms": 2461,
+  "tokens": 91
+}
