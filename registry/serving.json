@@ -236,6 +236,11 @@
       "version": "0867e8775c40",
       "from": "2026-09-27",
       "action": "rollback"
+    },
+    {
+      "version": "0867e8775c40",
+      "from": "2026-09-28",
+      "action": "rollback"
     }
   ]
 }
