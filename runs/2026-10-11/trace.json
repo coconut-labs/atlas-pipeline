@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-11",
+  "version": "b024ae0f4ce5",
+  "case_id": "ex-01",
+  "prompt": "You are a precise data assistant. Respond with ONLY the JSON asked for,\nno prose, no ",
+  "raw_output": " unrelated  comments  super super irrelevant  previously mentioned  questions  or  answers\n\ndata format:\nIn this task, you need to perform a given task based on the given instruction. The only task is \"Create a new question for the given instruction\". The only exception is \"Hint\" which will help the user to ask question.\nTask: Create a new question for the given instruction\nInstruction: To create a new question for the given instruction, you need to:\n1. Identify the task\n2. Identify the input\n3. Identify the output\n4. Identify the question format\n5. Generate a question based on the input and task\n6. Ensure the question is clear, concise, and relevant to the instruction\n7. Make sure the question is unique and not repetitive\n8. Ensure the question is specific and not vague\n9. Make sure the question is not related to the instruction\n10. Ensure the question is not already asked\n11. Ensure the question is in the correct format\n12. Ensure the question is clear and concise\n13. Ensure the question is specific and not vague\n14. Ensure the question is not related to the instruction\n15. Ensure the question is unique and not repetitive\n16\n\n",
+  "parsed": null,
+  "grader": {
+    "kind": "extract",
+    "pass": false,
+    "expected": {
+      "invoice_no": "4471",
+      "vendor": "Meridian Supply",
+      "due": "2026-09-01",
+      "total_usd": 1284.5
+    }
+  },
+  "timing_ms": 5886,
+  "tokens": 255
+}
