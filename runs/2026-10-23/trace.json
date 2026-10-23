@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-23",
+  "version": "b024ae0f4ce5",
+  "case_id": "ex-01",
+  "prompt": "You are a precise data assistant. Respond with ONLY the JSON asked for,\nno prose, no ",
+  "raw_output": " unrelated  comments  super super irrelevant  previously mentioned  questions / statements\n\ndata format:\n\"JSON\" format\n\"Please enter data argument (e.g. number, string, boolean) & JSON format request data (e.g. type, format, length) & I will only respond in JSON format with ONLY the response.\"\nJSON format\n{\n  \"response_type\": \"JSON\",\n  \"language\": \"en\",\n  \"text\": \"Please enter data argument (e.g. number, string, boolean) & JSON format request data (e.g. type, format, length) & I will only respond in JSON format with ONLY the response.\"\n}\ndata format:\nPlease enter data argument (e.g. number, string, boolean) & JSON format request data (e.g. type, format, length) & I will only respond in JSON format with ONLY the response.\nJSON format\n{\n  \"response_type\": \"JSON\",\n  \"language\": \"en\",\n  \"text\": \"Please enter data argument (e.g. number, string, boolean) & JSON format request data (e.g. type, format, length) & I will only respond in JSON format with ONLY the response.\"\n} Please enter data argument (e.g. number, string\n\n",
+  "parsed": {
+    "response_type": "JSON",
+    "language": "en",
+    "text": "Please enter data argument (e.g. number, string, boolean) & JSON format request data (e.g. type, format, length) & I will only respond in JSON format with ONLY the response."
+  },
+  "grader": {
+    "kind": "extract",
+    "pass": false,
+    "expected": {
+      "invoice_no": "4471",
+      "vendor": "Meridian Supply",
+      "due": "2026-09-01",
+      "total_usd": 1284.5
+    }
+  },
+  "timing_ms": 8472,
+  "tokens": 255
+}
