@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-08",
+  "candidate": "b024ae0f4ce5",
+  "incumbent": "18d11cde8a4e",
+  "cases": 6,
+  "axes": {
+    "quality": {
+      "cand": 0,
+      "inc": 0.5
+    },
+    "p95_ms": {
+      "cand": 2118,
+      "inc": 6301.5
+    },
+    "errors": {
+      "cand": 0,
+      "inc": 0
+    },
+    "tokens": {
+      "cand": 57.333333333333336,
+      "inc": 117.33333333333333
+    }
+  },
+  "verdict": "fail",
+  "failing_axis": "quality"
+}
