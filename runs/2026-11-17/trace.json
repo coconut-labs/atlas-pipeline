@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-17",
+  "version": "b024ae0f4ce5",
+  "case_id": "ex-01",
+  "prompt": "You are a precise data assistant. Respond with ONLY the JSON asked for,\nno prose, no ",
+  "raw_output": " unrelated  comments  superlative or negative language considered, only i) a json response\njson {\n  \"question\": {\n    \"question\": \"What is the most important aspect of the project?\",\n    \"answer\": \"The most important aspect of the project is the goal and the resources available.\"\n  }\n} [end of text]\n\n\n",
+  "parsed": {
+    "question": {
+      "question": "What is the most important aspect of the project?",
+      "answer": "The most important aspect of the project is the goal and the resources available."
+    }
+  },
+  "grader": {
+    "kind": "extract",
+    "pass": false,
+    "expected": {
+      "invoice_no": "4471",
+      "vendor": "Meridian Supply",
+      "due": "2026-09-01",
+      "total_usd": 1284.5
+    }
+  },
+  "timing_ms": 1874,
+  "tokens": 64
+}
